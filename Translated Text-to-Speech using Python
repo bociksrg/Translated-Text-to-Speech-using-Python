@@ -1,0 +1,9 @@
+from googletrans import translator
+from gtts import gTTS
+
+text = "I'm gonna try to translate this sentences"
+translator = translator()
+translation = translator.translate(text, dest='id')
+language = 'id'
+myobj = gTTS(text=translation.text, lang=language, slow=False)
+myobj.save("sound.mp3")
